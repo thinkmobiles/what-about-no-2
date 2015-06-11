@@ -11,6 +11,7 @@ module.exports = {
     ON_UPLOAD_VIDEO: "Upload video success",
     LOG_IN: "Login successful",
     LOG_OUT: "Logout successful",
+    FORGOT_PASS_TEXT: 'Email was sent',
 
     //Errors text
     NOT_UNIQUE_EMAIL: "This email is already in use",
