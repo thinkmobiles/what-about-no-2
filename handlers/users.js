@@ -142,7 +142,10 @@ var User = function (PostGre) {
 
         if (confirmToken) {
             UserModel
-                .fetchMe({confirmation_token: confirmToken})
+                .fetchMe({
+                    confirmation_token: confirmToken,
+                    project: CONSTANTS.PROJECT_NAME
+                })
                 .then(function (confirmUser) {
                     if (confirmUser && confirmUser.id) {
                         confirmUser
@@ -184,7 +187,8 @@ var User = function (PostGre) {
 
         UserModel
             .fetchMe({
-                email: params.email
+                email: params.email,
+                project: CONSTANTS.PROJECT_NAME
             })
             .then(function (userModel) {
                 if (userModel && userModel.id) {
@@ -234,7 +238,8 @@ var User = function (PostGre) {
 
         UserModel
             .fetchMe({
-                forgot_token: forgotToken
+                forgot_token: forgotToken,
+                project: CONSTANTS.PROJECT_NAME
             })
             .then(function (userModel) {
                 var saveOptions;
@@ -242,7 +247,7 @@ var User = function (PostGre) {
                 if (userModel && userModel.id) {
                     saveOptions = {
                         password: getEncryptedPass(params.password),
-                        forgot_token: ''
+                        forgot_token: null
                     };
 
                     userModel

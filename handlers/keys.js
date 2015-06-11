@@ -75,7 +75,8 @@ var Keys = function (PostGre) {
         //check params.videos is array, with 2 items;
         UserModel
             .fetchMe({
-                id: userId
+                id: userId,
+                project: CONSTANTS.PROJECT_NAME
             }, {
                 require: true
             })

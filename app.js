@@ -17,6 +17,7 @@ var knex;
 var PostGre;
 var Models;
 
+//todo change
 //process.env.NODE_ENV = 'production';
 process.env.NODE_ENV = 'development';
 
