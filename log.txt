@@ -1,0 +1,705 @@
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 11:49:01 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 11:49:01 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 11:49:10 GMT+0300 (Финляндия (лето))
+Please verify Your email!
+Error: Please verify Your email!
+    at User.signIn (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:94:35)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:43:18 GMT+0300 (Финляндия (лето))
+Not enough incoming parameters.
+NotEnoughIncomingParameters: Not enough incoming parameters.
+    at Error.CustomError (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:18:15)
+    at Object.notEnParams (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:38:16)
+    at signUp (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:72:30)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:43:58 GMT+0300 (Финляндия (лето))
+errors is not defined
+ReferenceError: errors is not defined
+    at saveVideos (c:\Users\root\WebstormProjects\we_consent_2\handlers\videos.js:14:33)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:36)
+From previous event:
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:89:26
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:45:71)
+From previous event:
+    at isExistsKey (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:41:14)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:69:17)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:68:14)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:25:13)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:44:12 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:77:31
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:43:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at Async.drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:45:13 GMT+0300 (Финляндия (лето))
+errors is not defined
+ReferenceError: errors is not defined
+    at saveVideos (c:\Users\root\WebstormProjects\we_consent_2\handlers\videos.js:14:33)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:36)
+From previous event:
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:89:26
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:45:71)
+From previous event:
+    at isExistsKey (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:41:14)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:69:17)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:68:14)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:25:13)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:46:38 GMT+0300 (Финляндия (лето))
+errors is not defined
+ReferenceError: errors is not defined
+    at saveVideos (c:\Users\root\WebstormProjects\we_consent_2\handlers\videos.js:14:33)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:36)
+From previous event:
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:89:26
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:45:71)
+From previous event:
+    at isExistsKey (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:41:14)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:69:17)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:68:14)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:25:13)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:47:40 GMT+0300 (Финляндия (лето))
+errors is not defined
+ReferenceError: errors is not defined
+    at saveVideos (c:\Users\root\WebstormProjects\we_consent_2\handlers\videos.js:14:33)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:36)
+From previous event:
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:89:26
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:45:71)
+From previous event:
+    at isExistsKey (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:41:14)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:69:17)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:68:14)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:25:13)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:48:44 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:77:31
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:43:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at Async.drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:49:50 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:51:07 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:51:38 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:88:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:50:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:52:22 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 09 2015 14:57:26 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Wed Jun 10 2015 10:10:30 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:27:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Wed Jun 10 2015 10:10:34 GMT+0300 (Финляндия (лето))
+Please verify Your email!
+Error: Please verify Your email!
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:99:35)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at Async.drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 11:45:59 GMT+0300 (Финляндия (лето))
+Not enough incoming parameters.
+NotEnoughIncomingParameters: Not enough incoming parameters.
+    at Error.CustomError (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:18:15)
+    at Object.notEnParams (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:38:16)
+    at signUp (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:83:30)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 11:48:34 GMT+0300 (Финляндия (лето))
+Unexpected string
+SyntaxError: Unexpected string
+    at Object.parse (native)
+    at parse (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\lib\types\json.js:84:17)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\lib\read.js:102:18
+    at done (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\node_modules\raw-body\index.js:248:14)
+    at IncomingMessage.onEnd (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\node_modules\raw-body\index.js:294:7)
+    at IncomingMessage.g (events.js:180:16)
+    at IncomingMessage.emit (events.js:92:17)
+    at _stream_readable.js:943:16
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 11:58:20 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 11:58:21 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 13:20:55 GMT+0300 (Финляндия (лето))
+Unexpected end of input
+SyntaxError: Unexpected end of input
+    at Object.parse (native)
+    at parse (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\lib\types\json.js:84:17)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\lib\read.js:102:18
+    at done (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\node_modules\raw-body\index.js:248:14)
+    at IncomingMessage.onEnd (c:\Users\root\WebstormProjects\we_consent_2\node_modules\body-parser\node_modules\raw-body\index.js:294:7)
+    at IncomingMessage.g (events.js:180:16)
+    at IncomingMessage.emit (events.js:92:17)
+    at _stream_readable.js:943:16
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 13:24:47 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 13:24:47 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 13:54:27 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:22:07 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:22:13 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:53:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:25:54 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:28:29 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:29:32 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\we_consent_2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 14:29:40 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:91:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\we_consent_2\handlers\keys.js:53:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 15:31:07 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 15:31:07 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 15:54:23 GMT+0300 (Финляндия (лето))
+Not enough incoming parameters.
+NotEnoughIncomingParameters: Not enough incoming parameters.
+    at Error.CustomError (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:18:15)
+    at Object.notEnParams (c:\Users\root\WebstormProjects\we_consent_2\helpers\badRequests.js:38:16)
+    at User.signIn (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:130:30)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 15:55:15 GMT+0300 (Финляндия (лето))
+Invalid incoming parameters
+Error: Invalid incoming parameters
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:289:27)
+    at tryCatcher (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise._settlePromiseAt (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:187:10)
+    at Async.drainQueues (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Thu Jun 11 2015 15:55:22 GMT+0300 (Финляндия (лето))
+null value in column "first_phone_number" violates not-null constraint
+error: null value in column "first_phone_number" violates not-null constraint
+    at Connection.parseE (c:\Users\root\WebstormProjects\we_consent_2\node_modules\pg\lib\connection.js:534:11)
+    at Connection.parseMessage (c:\Users\root\WebstormProjects\we_consent_2\node_modules\pg\lib\connection.js:361:17)
+    at Socket.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\pg\lib\connection.js:105:22)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+    at emitReadable (_stream_readable.js:422:5)
+    at readableAddChunk (_stream_readable.js:165:9)
+    at Socket.Readable.push (_stream_readable.js:127:10)
+    at TCP.onread (net.js:528:21)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\knex\lib\dialects\postgres\runner.js:38:10)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\knex\lib\runner.js:120:15)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\knex\lib\runner.js:44:19)
+From previous event:
+    at triggerThen.bind.then.then.attributes.(anonymous function).id (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bookshelf\lib\model.js:215:36)
+From previous event:
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bookshelf\lib\model.js:214:8)
+From previous event:
+    at _.extend.save (c:\Users\root\WebstormProjects\we_consent_2\node_modules\bookshelf\lib\model.js:178:8)
+From previous event:
+    at null.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:283:26)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at updateUser (c:\Users\root\WebstormProjects\we_consent_2\handlers\users.js:273:14)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\we_consent_2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------

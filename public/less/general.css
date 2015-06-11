@@ -1,0 +1,10 @@
+.top-buffer { margin-top:20px; }
+
+circle{
+    fill-opacity: .5 !important;
+    stroke-opacity: .5 !important;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

@@ -1,0 +1,105 @@
+<div class="wrapper">
+    <div class="content">
+        <div class="content-header">
+            <div class="searchBlock">
+                <h2>Search form</h2>
+                <form class="form-inline" name="videoForm" ng-submit="custCtrl.updateVideoList()">
+                    <div class="form-group">
+                        <label for="dateFrom">Date from</label>
+
+                        <p class="input-group">
+                            <input
+                                type="text"
+                                name="dateFrom"
+                                class="form-control"
+                                id="dateFrom"
+                                placeholder="MM-dd-yyyy"
+                                ng-model="custCtrl.video.dateFrom"
+                                datepicker-popup="MM-dd-yyyy"
+                                is-open="openedFrom"
+                                show-button-bar="false"
+                                max-date="custCtrl.maxDate"
+                                ng-click="openFrom($event)"
+                                readonly
+                                required
+                                >
+                            <span class="input-group-btn">
+                                <span class="btn btn-default" ng-click="openFrom($event)">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateTo">Date to</label>
+
+                        <p class="input-group">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="dateTo"
+                                ng-model="custCtrl.video.dateTo"
+                                placeholder="MM-dd-yyyy"
+                                datepicker-popup="MM-dd-yyyy"
+                                datepicker-append-to-body="true"
+                                is-open="openedTo"
+                                show-button-bar="false"
+                                data-show-weeks="false"
+                                max-date="custCtrl.maxDate"
+                                min-date="custCtrl.video.dateFrom"
+                                ng-click="openTo($event)"
+                                readonly
+                                required
+                                >
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openTo($event)"><i
+                                    class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <p class="input-group">
+                        <input type="email" class="form-control"
+                               id="email" ng-model="custCtrl.video.email"
+                               required
+                               placeholder="example@example.com"
+                            >
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <button type="submit" class="btn btn-default">Search</button>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="content-body">
+            <table class="table table-bordered table-hover">
+                <colgroup>
+                    <col width="50">
+                    <col width="420">
+                    <col width="350">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th> #</th>
+                    <th> Name</th>
+                    <th> Key</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in custCtrl.videoList">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.key}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

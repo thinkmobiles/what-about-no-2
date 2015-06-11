@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="less/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="less/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="less/textAngular.css"/>
+    <link rel="stylesheet" type="text/css" href="less/general.css"/>
+    <link rel="stylesheet" type="text/css" href="less/nga.min.css"/>
+    <link rel="stylesheet/less" type="text/css" href="less/style.less" />
+    <link rel="stylesheet/less" type="text/css" href="less/datepicker.css" />
+    <script src="js/libs/less/less-1.7.3.min.js"></script>
+   <script src="js/libs/require.js" data-main="js/main.js"></script>
+</head>
+<body ng-class="{Login: page == 'login'}" ng-cloak>
+    <errpopup msg="errMsg"></errpopup>
+    
+    <div class="page-header navbar navbar-fixed-top" ng-if="page !== 'login'">
+        <ng-include src="'/templates/menu/topmenu.html'" ></ng-include>
+    </div>
+    <div class="page-container">
+        <div class="page-content-wrapper">
+            <div class="page-content" ng-view></div>
+        </div>
+    </div>
+</body>
+</html>
+
