@@ -12,9 +12,9 @@ module.exports = function (knex, Promise) {
                 function (row) {
                     row.increments().primary();
                     row.string('email').unique().notNullable();
-                    row.string('notification_email').unique().notNullable();
-                    row.string('first_phone_number').unique().notNullable();
-                    row.string('second_phone_number').unique().notNullable();
+                    row.string('notification_email').unique();
+                    row.string('first_phone_number').unique();
+                    row.string('second_phone_number').unique();
                     row.string('password').notNullable();
                     row.string('project');
                     row.string('confirmation_token');
