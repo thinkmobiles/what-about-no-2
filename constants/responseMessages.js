@@ -17,5 +17,6 @@ module.exports = {
     NOT_EXISTS: 'is not exist',
     REMOVE_SUCCESSFULY: 'was removed successfully',
     YOUR_DATA_ALREADY_UPDATE: "your data already update",
-    SUCCESS_SAVED: "Success saved"
+    SUCCESS_SAVED: "Success saved",
+    SUCCESS_UPDATED: 'User preference was successfully changes and saved'
 };

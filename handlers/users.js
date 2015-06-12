@@ -300,7 +300,7 @@ var User = function (PostGre) {
                             patch:true
                         })
                         .then(function () {
-                            res.status(200).send({success: RESPONSES.SUCCESS_SAVED})
+                            res.status(200).send({success: RESPONSES.SUCCESS_UPDATED})
                         })
                         .otherwise(next)
                 } else {

@@ -132,7 +132,7 @@ var Keys = function (PostGre) {
 
                                     mailer.onUploadVideo(mailParams);
                                     sms.onUploadVideoSMS(smsParams);
-                                    res.status(200).send({success: RESPONSES.SUCCESS_SAVED});
+                                    res.status(201).send({success: RESPONSES.SUCCESS_SAVED});
                                 }
                             });
 

@@ -2,7 +2,7 @@ module.exports = function () {
     var _ = require('../public/js/libs/underscore-min.js');
     var nodemailer = require("nodemailer");
     var fs = require("fs");
-    var FROM = "What-About-No <confirmation.whataboutno@gmail.com>";
+    var FROM = "The No App <confirmation.whataboutno@gmail.com>";
     var moment = require('./moment');
 
     this.onSendConfirm = function (options, callback) {
