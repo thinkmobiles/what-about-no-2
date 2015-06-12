@@ -271,16 +271,18 @@ var User = function (PostGre) {
     this.updateUser = function (req, res, next) {
         var uId = req.session.userId;
         var options = req.body;
-        var saveOptions;
+        var saveOptions = {};
         var err;
 
-        if (!EMAIL_REGEXP.test(options.notification_email)) {
-            next(badRequests.invalidEmail());
+        if (options.notification_email && EMAIL_REGEXP.test(options.notification_email)) {
+            saveOptions.notification_email = options.notification_email;
         }
-        if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(options.first_phone_number) && !CONSTANTS.PHONE_NUMBER_REGEXP.test(options.second_phone_number)) {
-            err = new Error(CONSTANTS.INVALID_PHONE_NUMBER);
-            err.status = 400;
-            next(err);
+        if (options.first_phone_number && CONSTANTS.PHONE_NUMBER_REGEXP.test(options.first_phone_number)) {
+            saveOptions.first_phone_number = options.first_phone_number;
+        }
+
+        if (options.second_phone_number && CONSTANTS.PHONE_NUMBER_REGEXP.test(options.second_phone_number)) {
+            saveOptions.second_phone_number = options.second_phone_number;
         }
 
         UserModel
@@ -291,13 +293,6 @@ var User = function (PostGre) {
             .fetch()
             .then(function (user) {
                 if (user && user.id) {
-                    saveOptions = {
-                        notification_email: options.notification_email,
-                        first_phone_number: options.first_phone_number,
-                        second_phone_number: options.second_phone_number
-
-                    };
-
                     user
                         .save(
                         saveOptions,
