@@ -30,7 +30,10 @@ var Keys = function (PostGre) {
             });
 
         PostGre.knex(TABLES.KEYS)
-            .where({id: keyId})
+            .where({
+                id: keyId,
+                project: CONSTANTS.PROJECT_NAME
+            })
             .del()
             .then(function () {
                 if (process.env.NODE_ENV === 'development') {

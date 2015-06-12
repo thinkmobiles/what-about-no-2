@@ -80,9 +80,6 @@ module.exports = function (knex, Promise) {
         knex('users')
             .insert({
                 email: 'confirmation.WhatAboutNo@gmail.com',
-                notification_email: 'confirmation.WhatAboutNo@gmail.com',
-                first_phone_number: '+1000000001',
-                second_phone_number: '+100000002',
                 password: encryptedPass,
                 role: 1,
                 project: CONSTANTS.PROJECT_NAME
