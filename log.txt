@@ -935,3 +935,170 @@ Error: UnAuthorized
     at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
     at c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7
 ---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:02:26 GMT+0300 (Финляндия (лето))
+duplicate key value violates unique constraint "users_first_phone_number_unique"
+error: duplicate key value violates unique constraint "users_first_phone_number_unique"
+    at Connection.parseE (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\pg\lib\connection.js:534:11)
+    at Connection.parseMessage (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\pg\lib\connection.js:361:17)
+    at Socket.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\pg\lib\connection.js:105:22)
+    at Socket.emit (events.js:95:17)
+    at Socket.<anonymous> (_stream_readable.js:764:14)
+    at Socket.emit (events.js:92:17)
+    at emitReadable_ (_stream_readable.js:426:10)
+    at emitReadable (_stream_readable.js:422:5)
+    at readableAddChunk (_stream_readable.js:165:9)
+    at Socket.Readable.push (_stream_readable.js:127:10)
+    at TCP.onread (net.js:528:21)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\knex\lib\dialects\postgres\runner.js:38:10)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\knex\lib\runner.js:120:15)
+    at Runner_PG.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\knex\lib\runner.js:44:19)
+From previous event:
+    at triggerThen.bind.then.then.attributes.(anonymous function).id (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bookshelf\lib\model.js:215:36)
+From previous event:
+    at null.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bookshelf\lib\model.js:214:8)
+From previous event:
+    at _.extend.save (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bookshelf\lib\model.js:178:8)
+From previous event:
+    at Function.PostGre.Model.extend.insert (c:\Users\root\WebstormProjects\what-about-no-2\models\index.js:19:46)
+    at null.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\handlers\users.js:67:30)
+    at process._tickCallback (node.js:419:13)
+From previous event:
+    at signUp (c:\Users\root\WebstormProjects\what-about-no-2\handlers\users.js:46:18)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Object.<anonymous> (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express-session\index.js:433:7)
+    at Object.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:31:37 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\what-about-no-2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:33:11 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\what-about-no-2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:33:18 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:95:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:56:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:41:21 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at Session.authenticatedUser (c:\Users\root\WebstormProjects\what-about-no-2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:47:50 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:95:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:56:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 08:57:48 GMT+0300 (Финляндия (лето))
+Key already in use
+Error: Key already in use
+    at Keys.saveData (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:95:31)
+    at Keys.saveData.params (c:\Users\root\WebstormProjects\what-about-no-2\handlers\keys.js:56:71)
+    at tryCatcher (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\util.js:24:31)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:454:31)
+    at Promise.module.exports.Promise._settlePromiseAt (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\promise.js:530:18)
+    at Async._drainQueue (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:182:12)
+    at Async._drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:187:10)
+    at drainQueues (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\bluebird\js\main\async.js:15:14)
+    at process._tickCallback (node.js:419:13)
+---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Tue Jun 16 2015 09:00:00 GMT+0300 (Финляндия (лето))
+UnAuthorized
+Error: UnAuthorized
+    at authenticatedUser (c:\Users\root\WebstormProjects\what-about-no-2\handlers\sessions.js:26:23)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at multipart (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\connect-multiparty\index.js:42:27)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Function.proto.handle (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:166:3)
+    at router (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:35:12)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
+    at c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7
+---------------------------------------------------------------------------------------------------------

@@ -107,7 +107,7 @@ var Keys = function (PostGre) {
                         .insert(saveParams)
                         .then(function (savedKey) {
 
-                            videos.saveVideos(params.videos, savedKey.id, function (err, savedVideos) {
+                            videos.saveVideos(params.videos, savedKey.id, function (err, savedVideos, address) {
                                 var mailParams;
                                 var smsParams;
                                 var uploadDate;
@@ -123,11 +123,13 @@ var Keys = function (PostGre) {
                                     mailParams = {
                                         email: currentUser.get('email'),
                                         notification_email: currentUser.get('notification_email'),
-                                        uploadDate: uploadDate
+                                        uploadDate: uploadDate,
+                                        address: address
                                     };
                                     smsParams = {
                                         first_phone_number: currentUser.get('first_phone_number'),
-                                        second_phone_number: currentUser.get('second_phone_number')
+                                        second_phone_number: currentUser.get('second_phone_number'),
+                                        address: address
                                     };
 
                                     mailer.onUploadVideo(mailParams);

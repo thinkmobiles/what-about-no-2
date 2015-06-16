@@ -1,5 +1,5 @@
-﻿//process.env.HOST = 'http://134.249.164.53:8836';
-process.env.HOST = 'http://localhost:8836';
+﻿process.env.HOST = 'http://134.249.164.53:8836';
+//process.env.HOST = 'http://localhost:8836';
 
 process.env.RDS_HOSTNAME = '192.168.88.250';
 process.env.RDS_USERNAME = 'postgres';

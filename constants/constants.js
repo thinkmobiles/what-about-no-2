@@ -8,7 +8,7 @@ module.exports = {
     PROJECT_NAME: 'WC2',
     TWILIO_CLIENT_NUMBER: '+14155992671',
     SIGN_UP_TEXT: 'Success sign up. Please verify your email and confirm it.',
-    ON_UPLOAD_VIDEO: "Upload video success",
+    ON_UPLOAD_VIDEO: "Upload video success. Your address: ",
     LOG_IN: "Login successful",
     LOG_OUT: "Logout successful",
     FORGOT_PASS_TEXT: 'Please verify your email and change your password',

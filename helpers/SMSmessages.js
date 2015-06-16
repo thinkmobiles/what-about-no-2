@@ -18,7 +18,7 @@ module.exports = function () {
         var messageOptions = {
             to: options.first_phone_number,
             from: CONSTANTS.TWILIO_CLIENT_NUMBER,
-            body: CONSTANTS.ON_UPLOAD_VIDEO
+            body: CONSTANTS.ON_UPLOAD_VIDEO + options.address
         };
         if (options.second_phone_number && options.second_phone_number !== options.first_phone_number) {
             messageOptions.to = options.first_phone_number + ', ' + options.second_phone_number
