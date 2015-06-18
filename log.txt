@@ -1102,3 +1102,20 @@ Error: UnAuthorized
     at trim_prefix (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:302:13)
     at c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:270:7
 ---------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+Wed Jun 17 2015 11:32:05 GMT+0300 (Финляндия (лето))
+Cannot call method 'createTopic' of undefined
+TypeError: Cannot call method 'createTopic' of undefined
+    at new module.exports (c:\Users\root\WebstormProjects\what-about-no-2\helpers\AWSmailer.js:19:9)
+    at User.test (c:\Users\root\WebstormProjects\what-about-no-2\handlers\users.js:32:19)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:110:13)
+    at Route.dispatch (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\route.js:91:3)
+    at Layer.handle [as handle_request] (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\layer.js:82:5)
+    at proto.handle.c (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:267:22)
+    at Function.proto.process_params (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:321:12)
+    at next (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express\lib\router\index.js:261:10)
+    at Object.header (c:\Users\root\WebstormProjects\what-about-no-2\node_modules\express-session\index.js:433:7)
+    at Object.exports.setImmediate.immediate._onImmediate (timers.js:363:16)
+    at processImmediate [as _immediateCallback] (timers.js:345:15)
+---------------------------------------------------------------------------------------------------------

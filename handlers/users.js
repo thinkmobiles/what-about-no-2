@@ -17,6 +17,8 @@ var User = function (PostGre) {
     var mailer = new Mailer();
     var SMSModule = require('../helpers/SMSmessages');
     var sms = new SMSModule();
+    var AWSModule = require('../helpers/AWSmailer');
+
 
     var self = this;
 
