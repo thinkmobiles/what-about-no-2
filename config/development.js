@@ -5,7 +5,7 @@ process.env.RDS_HOSTNAME = '192.168.88.250';
 process.env.RDS_USERNAME = 'postgres';
 process.env.RDS_PASSWORD = 'postgres';
 process.env.RDS_PORT = 5432;
-process.env.DATABASE = "consent_dev_2";
+process.env.DATABASE = "what_about_no_prod";
 
 process.env.mailerService = "SendGrid";
 
