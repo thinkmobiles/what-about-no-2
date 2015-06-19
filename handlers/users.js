@@ -44,7 +44,12 @@ var User = function (PostGre) {
                 next(err);
             }
             UserModel
-                .fetchMe({email: params.email})
+                .fetchMe(
+                    {
+                        email: params.email,
+                        project: CONSTANTS.PROJECT_NAME
+                    }
+                )
                 .then(function (existsUser) {
                     var createOptions;
                     var confirmToken;
