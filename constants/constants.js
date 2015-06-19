@@ -6,7 +6,7 @@ module.exports = {
     PHONE_NUMBER_REGEXP: /^\+[1-9]\d{6,14}$/,
     DEFAULT_TABLE: "members",
     PROJECT_NAME: 'WC2',
-    TWILIO_CLIENT_NUMBER: '+14155992671',
+    TWILIO_CLIENT_NUMBER: '+18443343240',
     SIGN_UP_TEXT: 'Success sign up. Please verify your email and confirm it.',
     ON_UPLOAD_VIDEO: "Upload video success. Your address: ",
     LOG_IN: "Login successful",

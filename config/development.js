@@ -13,8 +13,8 @@ process.env.mailerUserName = "what-about-no";
 process.env.mailerPassword = "19F*9%Y^KJtj";
 
 //for send sms
-process.env.smsAccountSid = 'ACb88992648fdb995faa56cfd737eef644';
-process.env.smsAuthToken = 'a184e4dfa69bdb0d4828172623a3714c';
+process.env.smsAccountSid = 'ACa649d270b734787181a9c0e21301ca84';
+process.env.smsAuthToken = '114f2332bd9bb0d4a435dd29dd323c12';
 
 //process.env.mailerUserName = "we-consent";
 //process.env.mailerPassword = "Uo54n!GA";
