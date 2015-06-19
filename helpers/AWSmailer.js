@@ -1,4 +1,6 @@
-module.exports = function () {
+'use strict';
+
+var SnsModule = function () {
     var AWS = require('aws-sdk');
     var util = require('util');
 
@@ -16,36 +18,55 @@ module.exports = function () {
         TopicArn: 'arn:aws:sns:us-east-1:397819774503:demo',
         Endpoint: '+380-66-023-7194'
     };
-    var paramsDisplayName  = {
-        AttributeName: 'DisplayName',
-        AttributeValue: 'TEST'
-    };
-    sns.createTopic({
-        'Name': 'Test'
-    }, function (err, result) {
 
-        if (err !== null) {
-            console.log(util.inspect(err));
-            return;
-        }
-        paramsDisplayName.TopicArn = result.TopicArn
-        sns.setTopicAttributes(paramsDisplayName, function(err, data) {
-            if (err) console.log(err, err.stack);
-            else     console.log(data);
+    this.amazonSNS = sns;
+
+    this.createTopic = function (params, callback) {
+        var params = {
+            AttributeName: 'DisplayName',
+            //AttributeValue: 'TEST'
+            AttributeValue: 'Congratulation'
+        };
+
+        sns.createTopic({
+            //'Name': 'Test'
+            Name: 'Congratulation'
+        }, function (err, result) {
+
+            if (err) {
+                if (callback && (typeof callback === 'function')) {
+                    callback(err);
+                }
+                return console.error(err);
+            }
+            console.log('>>> result: ');
+            console.dir('>>> ', result);
+            if (callback && (typeof callback === 'function')) {
+                callback(null, result);
+            }
+            params.TopicArn = result.TopicArn;
+
+            sns.setTopicAttributes(params, function (err, data) {
+                if (err) console.log(err, err.stack);
+                else     console.log(data);
+            });
         });
-    });
+    };
 
-   /* sns.setTopicAttributes(paramsDisplayName, function(err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else     console.log(data);           // successful response
-    });*/
+
+    /* sns.setTopicAttributes(paramsDisplayName, function(err, data) {
+     if (err) console.log(err, err.stack); // an error occurred
+     else     console.log(data);           // successful response
+     });*/
 
     /*sns.subscribe(params, function (err, data) {
-        if (err) {
-            console.log(err, err.stack);
-        } else {
-            console.log(data);
-        }
-    });*/
+     if (err) {
+     console.log(err, err.stack);
+     } else {
+     console.log(data);
+     }
+     });*/
 
 };
+
+module.exports = new SnsModule();

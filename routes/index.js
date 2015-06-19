@@ -46,6 +46,8 @@ module.exports = function (app, PostGre) {
         res.render('successConfirm.html');
     });
 
+    app.get('/test/sns', users.testSNS);
+
     function errorHandler( err, req, res, next ) {
         console.error( err.message );
         console.error( err.stack );
