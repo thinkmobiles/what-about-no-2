@@ -11,7 +11,7 @@ module.exports = {
     ON_UPLOAD_VIDEO: "Upload video success. Your address: ",
     LOG_IN: "Login successful",
     LOG_OUT: "Logout successful",
-    FORGOT_PASS_TEXT: 'Please verify your email and change your password',
+    FORGOT_PASS_TEXT: 'Please check your email and proceed by provided link for changing password',
 
     //Errors text
     NOT_UNIQUE_EMAIL: "This email is already in use",
