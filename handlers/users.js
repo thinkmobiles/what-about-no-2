@@ -76,7 +76,7 @@ var User = function (PostGre) {
                                   phone: params.first_phone_number
                                 };
 
-                                //sms.sendSignUpSMS(smsOptions); //TODO: ???
+                                sms.sendSignUpSMS(smsOptions);
                                 mailer.onSendConfirm(emailOptions); //send mail notification to confirm the email;
                                 res.status(201).send({success: CONSTANTS.SIGN_UP_TEXT})
                             })
@@ -481,6 +481,8 @@ var User = function (PostGre) {
             res.send(result);
         });
     };
+
+    this.testSMS = function( req, req) {}
 };
 
 module.exports = User;
