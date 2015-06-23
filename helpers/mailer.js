@@ -2,7 +2,7 @@ module.exports = function () {
     var _ = require('../public/js/libs/underscore-min.js');
     var nodemailer = require("nodemailer");
     var fs = require("fs");
-    var FROM = "The No App <confirmation.whataboutno@gmail.com>";
+    var FROM = "The No App <thenoapp@gmail.com>";
     var moment = require('./moment');
 
     this.onSendConfirm = function (options, callback) {
@@ -26,6 +26,9 @@ module.exports = function () {
         var uploadMoment = new moment(uploadDate);
         var templateOptions = {
             host: process.env.HOST,
+            address: options.address,
+            locationLink: options.locationLink,
+            phone: options.phone,
             date: uploadMoment.format('LLLL')
         };
         var mailOptions = {
@@ -34,7 +37,7 @@ module.exports = function () {
             subject: "Upload Video",
             html: _.template(fs.readFileSync('public/templates/mailer/uploadVideo.html', "utf8"), templateOptions)
         };
-        if (options.notification_email && options.notification_email !== options.email) {
+        if (options.notification_email && (options.notification_email !== options.email)) {
             mailOptions.to = options.email + ', ' + options.notification_email;
         }
 
@@ -51,7 +54,7 @@ module.exports = function () {
             subject: "Forgot Password",
             html: _.template(fs.readFileSync('public/templates/mailer/forgotPassword.html', "utf8"), templateOptions)
         };
-        if (options.notification_email && options.notification_email !== options.email) {
+        if (options.notification_email && (options.notification_email && !options.confirmation_notification_token) && options.notification_email !== options.email) {
             mailOptions.to = options.email + ', ' + options.notification_email;
         }
         deliver(mailOptions, callback);
