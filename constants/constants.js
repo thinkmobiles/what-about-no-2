@@ -7,7 +7,7 @@ module.exports = {
     DEFAULT_TABLE: "members",
     PROJECT_NAME: 'WC2',
     TWILIO_CLIENT_NUMBER: '+18443343240',
-    SIGN_UP_TEXT: 'Success sign up. Please verify your email and confirm it.',
+    SIGN_UP_TEXT: 'You have successfully registered to The-No-App. Please verify your email and confirm it.',
     ON_UPLOAD_VIDEO: "Upload video success. Your address: ",
     LOG_IN: "Login successful",
     LOG_OUT: "Logout successful",
@@ -15,6 +15,7 @@ module.exports = {
 
     //Errors text
     NOT_UNIQUE_EMAIL: "This email is already in use",
+    NOT_UNIQUE_PHONE_NUMBER: "This phone number is already in use",
     VERIFY_EMAIL: "Please verify Your email!",
     CONFIRM_ERROR: "Invalid confirmToken",
     EMAIL_ERROR: "User was not found by email",
