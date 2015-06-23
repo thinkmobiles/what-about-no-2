@@ -111,6 +111,9 @@ var Keys = function (PostGre) {
                                 var mailParams;
                                 var smsParams;
                                 var uploadDate;
+                                var long;
+                                var lat;
+                                var locationLink;
 
                                 if (err) {
                                     //rollback and send response:
@@ -119,21 +122,38 @@ var Keys = function (PostGre) {
 
                                 } else {
 
+                                    long = savedVideos.get('longitude');
+                                    lat = savedVideos.get('latitude');
+
+                                    //locationLink = "http://www.google.com/maps/place/%f,%f/@%f,%f,10z/data=!3m1!1e3";
+                                    locationLink = "http://www.google.com/maps/place/" + lat +"," + long
+                                        + "/@" + lat + "," + long + ",15z";
+
                                     uploadDate = savedVideos.get('datetime');
                                     mailParams = {
                                         email: currentUser.get('email'),
-                                        notification_email: currentUser.get('notification_email'),
+                                        phone: currentUser.get('first_phone_number'),
                                         uploadDate: uploadDate,
-                                        address: address
+                                        address: address,
+                                        locationLink: locationLink
                                     };
+
+
+                                    if (currentUser.get('notification_email') && !(currentUser.get('confirmation_notification_token'))) {
+                                        mailParams.notification_email = currentUser.get('notification_email');
+                                    }
+
                                     smsParams = {
                                         first_phone_number: currentUser.get('first_phone_number'),
                                         second_phone_number: currentUser.get('second_phone_number'),
-                                        address: address
+                                        uploadDate: uploadDate,
+                                        address: address,
+                                        locationLink: locationLink
                                     };
 
-                                    mailer.onUploadVideo(mailParams);
                                     sms.onUploadVideoSMS(smsParams);
+                                    mailer.onUploadVideo(mailParams);
+
                                     res.status(201).send({success: RESPONSES.SUCCESS_SAVED});
                                 }
                             });

@@ -30,65 +30,146 @@ var User = function (PostGre) {
 
     this.signUp = function (req, res, next) {
         var params = req.body;
-        var emailOptions;
-        var smsOptions;
+        var email;
+        var notificationEmail;
+        var firstPhoneNumber;
+        var secondPhoneNumber;
         var err;
 
-        if (params && params.email && params.pass && params.notification_email && params.first_phone_number && params.second_phone_number ) {
-            if (!EMAIL_REGEXP.test(params.email) && !EMAIL_REGEXP.test(params.notification_email)) {
-                next(badRequests.invalidEmail());
+        if (params && params.email && params.pass && params.first_phone_number) {
+            if (!EMAIL_REGEXP.test(params.email)) {
+                return next(badRequests.invalidEmail());
             }
-            if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.first_phone_number) && !CONSTANTS.PHONE_NUMBER_REGEXP.test(params.second_phone_number)) {
+            if (params.notification_email && (!EMAIL_REGEXP.test(params.notification_email))) {
+                return next(badRequests.invalidEmail());
+            }
+            if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.first_phone_number)) {
                 err = new Error(CONSTANTS.INVALID_PHONE_NUMBER);
                 err.status = 400;
-                next(err);
+                return next(err);
             }
+            if (params.second_phone_number && (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.second_phone_number))) {
+                err = new Error(CONSTANTS.INVALID_PHONE_NUMBER);
+                err.status = 400;
+                return next(err);
+            }
+
+            email = params.email;
+            notificationEmail = params.notification_email;
+            firstPhoneNumber = params.first_phone_number;
+            secondPhoneNumber = params.second_phone_number;
+
             UserModel
-                .fetchMe(
-                    {
+                .forge()
+                .query(function (qb) {
+                    var sql = "( ";
+
+                    sql += " (email='" + email + "') OR (first_phone_number='" + firstPhoneNumber + "') ";
+                    sql += " OR (notification_email='" + email + "') OR (second_phone_number='" + firstPhoneNumber + "')";
+
+                    if (notificationEmail) {
+                        sql += " OR (notification_email='" + notificationEmail + "') OR (email='" + notificationEmail + "')";
+                    }
+
+                    if (secondPhoneNumber) {
+                        sql += " OR (second_phone_number='" + secondPhoneNumber + "') OR (first_phone_number='" + secondPhoneNumber + "')";
+                    }
+
+                    sql += ") AND project='" + CONSTANTS.PROJECT_NAME + "' ";
+
+                    return qb.whereRaw(sql);
+                })
+                /*.fetchMe({
                         email: params.email,
                         project: CONSTANTS.PROJECT_NAME
-                    }
-                )
+                })*/
+                .fetch()
                 .then(function (existsUser) {
+                    var userJSON;
                     var createOptions;
-                    var confirmToken;
 
-                    if (existsUser && existsUser.id) {
-                        err = new Error(CONSTANTS.NOT_UNIQUE_EMAIL);
+                    if (existsUser && existsUser.id) { //check unique email, notification_email, first_phone_number, second_phone_number;
+
+                        userJSON = existsUser.toJSON();
+
+                        err = new Error();
                         err.status = 400;
-                        next(err);
-                    } else {
-                        confirmToken = tokenGenerator.generate();
-                        createOptions = {
-                            email: params.email,
-                            notification_email: params.notification_email,
-                            first_phone_number: params.first_phone_number,
-                            second_phone_number: params.second_phone_number,
-                            password: getEncryptedPass(params.pass),
-                            confirmation_token: confirmToken,
-                            project: CONSTANTS.PROJECT_NAME
-                        };
 
-                        UserModel
-                            .insert(createOptions)
-                            .then(function (user) {
-                                emailOptions = {
-                                    email: user.get('email'),
-                                    confirmToken: confirmToken
-                                };
-                                smsOptions = {
-                                  phone: params.first_phone_number
-                                };
+                        if ((email === userJSON.email)
+                            || (email === userJSON.notification_email)
+                            || (notificationEmail === userJSON.email)
+                            || (notificationEmail === userJSON.notification_email)
+                        ) {
+                            err.message = CONSTANTS.NOT_UNIQUE_EMAIL;
+                        }
 
-                                sms.sendSignUpSMS(smsOptions);
-                                mailer.onSendConfirm(emailOptions); //send mail notification to confirm the email;
-                                res.status(201).send({success: CONSTANTS.SIGN_UP_TEXT})
-                            })
-                            .otherwise(next);
+                        if ((firstPhoneNumber === userJSON.first_phone_number)
+                            || (firstPhoneNumber === userJSON.second_phone_number)
+                            || (secondPhoneNumber === userJSON.first_phone_number)
+                            || (secondPhoneNumber === userJSON.second_phone_number)
+                        ) {
+                           err.message = CONSTANTS.NOT_UNIQUE_PHONE_NUMBER;
+                        }
+
+                        return next(err);
                     }
+
+                    createOptions = {
+                        email: email,
+                        first_phone_number: firstPhoneNumber,
+                        password: getEncryptedPass(params.pass),
+                        confirmation_token: tokenGenerator.generate(),
+                        project: CONSTANTS.PROJECT_NAME
+                    };
+
+                    if (notificationEmail) {
+                        createOptions.notification_email = notificationEmail;
+                        createOptions.confirmation_notification_token = tokenGenerator.generate();
+                    }
+
+                    if (secondPhoneNumber) {
+                        createOptions.second_phone_number = secondPhoneNumber;
+                    }
+
+                    UserModel
+                        .insert(createOptions)
+                        .then(function (userModel) {
+                            var smsOptions = {
+                                phone: userModel.get('first_phone_number')
+                            };
+                            var emailConfirmOptions = {
+                                email: userModel.get('email'),
+                                confirmToken: userModel.get('confirmation_token')
+                            };
+                            var notificationEmail = userModel.get('notification_email');
+                            var notificationToken = userModel.get('confirmation_notification_token');
+                            var notificationEmailConfirmOptions;
+
+                            if (notificationEmail && notificationToken) {
+                                notificationEmailConfirmOptions = {
+                                    email: notificationEmail,
+                                    confirmToken: notificationToken
+                                };
+                            }
+
+                            sms.sendSignUpSMS(smsOptions);
+
+                            mailer.onSendConfirm(emailConfirmOptions); //send mail notification to confirm the email;
+
+                            if (notificationEmailConfirmOptions) {
+                                mailer.onSendConfirm(notificationEmailConfirmOptions); //send mail notification to notification_email
+                            }
+
+                            res.status(201).send({success: CONSTANTS.SIGN_UP_TEXT})
+                        })
+                        .otherwise(function (err) {
+                            next(err);
+                        });
+
                 })
-                .otherwise(next);
+                .otherwise(function (err) {
+                    next(err);
+                });
 
 
         } else {
@@ -149,14 +230,34 @@ var User = function (PostGre) {
 
         if (confirmToken) {
             UserModel
-                .fetchMe({
-                    confirmation_token: confirmToken,
-                    project: CONSTANTS.PROJECT_NAME
+                .forge()
+                .query(function (qb) {
+                    var sql = "("
+                    + "(confirmation_token='" + confirmToken + "' AND project='" + CONSTANTS.PROJECT_NAME + "') "
+                    + " OR "
+                    + "(confirmation_notification_token='" + confirmToken + "' AND project='" + CONSTANTS.PROJECT_NAME + "') "
+                    + ") ";
+
+                    return qb.whereRaw(sql);
                 })
+                .fetch()
                 .then(function (confirmUser) {
+                    var saveParams;
+
                     if (confirmUser && confirmUser.id) {
+
+                        if (confirmUser.get('confirmation_token') === confirmToken) {
+                            saveParams = {
+                                confirmation_token: null
+                            };
+                        } else {
+                            saveParams = {
+                                confirmation_notification_token: null
+                            };
+                        }
+
                         confirmUser
-                            .save({confirmation_token: null}, {patch: true})
+                            .save(saveParams, {patch: true})
                             .then(function (user) {
                                 res.redirect(process.env.HOST + '/successConfirm');
                             })
@@ -291,6 +392,8 @@ var User = function (PostGre) {
         if (options.second_phone_number && CONSTANTS.PHONE_NUMBER_REGEXP.test(options.second_phone_number)) {
             saveOptions.second_phone_number = options.second_phone_number;
         }
+
+        //TODO: fixme check unique notification_email, first, second phone;
 
         UserModel
             .forge({

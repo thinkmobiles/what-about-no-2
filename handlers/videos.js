@@ -7,16 +7,22 @@ var Videos = function (PostGre) {
     var gm = require('googlemaps');
 
     function getCountryCity(location, callback) {
-        if (location.lat && location.lon) {
-            var lngStr = location.lon + ',' + location.lat;
-            gm.reverseGeocode(lngStr, function (err, data) {
-                if (!err) {
-                    var address = data.results[0].formatted_address;
+        var lngStr;
 
-                    callback(null, address);
-                } else {
-                    callback(err);
+        if (location.lat && location.lon) {
+            lngStr = location.lat + ',' + location.lon;
+            gm.reverseGeocode(lngStr, function (err, data) {
+                var address;
+
+                if (err) {
+                    return callback(err);
                 }
+
+                if (data && data[0]) {
+                    address = data.results[0].formatted_address;
+                }
+
+                callback(null, address);
             });
         }
     };
@@ -24,12 +30,14 @@ var Videos = function (PostGre) {
     this.saveVideos = function (videos, keyId, callback) {
         var saveData;
         var location;
-
         var arr = videos.split('_');
+        var err;
 
         if (arr.length < 5) {
             if (callback && ( typeof callback === 'function' )) {
-                return callback(errors)
+                err = new Error('Incorrect video name');
+                err.status = 400;
+                return callback(err);
             }
         }
 
