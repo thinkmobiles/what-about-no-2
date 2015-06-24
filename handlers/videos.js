@@ -5,9 +5,9 @@ var Videos = function (PostGre) {
     var VideoModel = PostGre.Models[TABLES.VIDEOS];
     var badRequests = require('../helpers/badRequests')();
 
-    this.saveVideo = function (videos, keyId, callback) {
+    this.saveVideo = function (videoName, keyId, callback) {
         var saveData;
-        var arr = videos.split('_');
+        var arr = videoName.split('_');
         var err;
 
         if (arr.length < 5) {
