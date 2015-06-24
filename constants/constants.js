@@ -22,5 +22,6 @@ module.exports = {
     PASS_ERROR: 'Password and Confirmation Password are not equal',
     KEY_ERROR: "Key already in use",
     INVALID_PHONE_NUMBER: "Invalid phone number",
-    UNATHORIZED: 'UnAuthorized'
+    UNATHORIZED: 'UnAuthorized',
+    NOT_FOUND_USER: 'User was not found'
 };
