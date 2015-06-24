@@ -88,13 +88,13 @@ var Keys = function (PostGre) {
                     var saveParams;
 
                     if (err) {
-                        next(err);
+                        return next(err);
                     }
 
                     if (isExists) {
                         err = new Error(CONSTANTS.KEY_ERROR);
                         err.ststus = 400;
-                        next(err);
+                        return next(err);
                     }
 
                     saveParams = {
