@@ -26,7 +26,6 @@ module.exports = function () {
         var uploadMoment = new moment(uploadDate);
         var templateOptions = {
             host: process.env.HOST,
-            address: options.address,
             locationLink: options.locationLink,
             phone: options.phone,
             date: uploadMoment.format('LLLL')

@@ -4,32 +4,9 @@ var Videos = function (PostGre) {
     var CONSTANTS = require('../constants/constants');
     var VideoModel = PostGre.Models[TABLES.VIDEOS];
     var badRequests = require('../helpers/badRequests')();
-    var gm = require('googlemaps');
 
-    function getCountryCity(location, callback) {
-        var lngStr;
-
-        if (location.lat && location.lon) {
-            lngStr = location.lat + ',' + location.lon;
-            gm.reverseGeocode(lngStr, function (err, data) {
-                var address;
-
-                if (err) {
-                    return callback(err);
-                }
-
-                if (data && data[0]) {
-                    address = data.results[0].formatted_address;
-                }
-
-                callback(null, address);
-            });
-        }
-    };
-
-    this.saveVideos = function (videos, keyId, callback) {
+    this.saveVideo = function (videos, keyId, callback) {
         var saveData;
-        var location;
         var arr = videos.split('_');
         var err;
 
@@ -51,30 +28,18 @@ var Videos = function (PostGre) {
             project: CONSTANTS.PROJECT_NAME
         };
 
-        location = {
-            lon: arr[2],
-            lat: arr[3]
-        };
-        getCountryCity(location, function (err, address) {
-            if(err) {
-                callback(err)
-            } else {
-                VideoModel
-                    .insert(saveData)
-                    .then(function (savedVideo) {
-                        if (callback && ( typeof callback === 'function' )) {
-                            callback(null, savedVideo, address)
-                        }
-                    })
-                    .otherwise(function (err) {
-                        if (callback && ( typeof callback === 'function')) {
-                            return callback(err)
-                        }
-                    });
-            }
-        })
-
-
+        VideoModel
+            .insert(saveData)
+            .then(function (savedVideo) {
+                if (callback && ( typeof callback === 'function' )) {
+                    callback(null, savedVideo);
+                }
+            })
+            .otherwise(function (err) {
+                if (callback && ( typeof callback === 'function')) {
+                    return callback(err);
+                }
+            });
     };
 
     this.getVideosByEmail = function (req, res, next) {

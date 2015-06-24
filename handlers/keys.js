@@ -107,7 +107,7 @@ var Keys = function (PostGre) {
                         .insert(saveParams)
                         .then(function (savedKey) {
 
-                            videos.saveVideos(params.videos, savedKey.id, function (err, savedVideos, address) {
+                            videos.saveVideo(params.videos, savedKey.id, function (err, videoModel) {
                                 var mailParams;
                                 var smsParams;
                                 var uploadDate;
@@ -118,26 +118,23 @@ var Keys = function (PostGre) {
                                 if (err) {
                                     //rollback and send response:
                                     removeVideosAndKey(savedKey.id);
-                                    res.status(500).send({error: RESPONSES.INTERNAL_ERROR});
-
+                                    next(err);
                                 } else {
 
-                                    long = savedVideos.get('longitude');
-                                    lat = savedVideos.get('latitude');
+                                    long = videoModel.get('longitude');
+                                    lat = videoModel.get('latitude');
 
-                                    //locationLink = "http://www.google.com/maps/place/%f,%f/@%f,%f,10z/data=!3m1!1e3";
-                                    locationLink = "http://www.google.com/maps/place/" + lat +"," + long
-                                        + "/@" + lat + "," + long + ",15z";
+                                    locationLink = "http://www.google.com/maps/place/"
+                                    + lat + "," + long + "/@"
+                                    + lat + "," + long + ",15z";
 
-                                    uploadDate = savedVideos.get('datetime');
+                                    uploadDate = videoModel.get('datetime');
                                     mailParams = {
                                         email: currentUser.get('email'),
                                         phone: currentUser.get('first_phone_number'),
                                         uploadDate: uploadDate,
-                                        address: address,
                                         locationLink: locationLink
                                     };
-
 
                                     if (currentUser.get('notification_email') && !(currentUser.get('confirmation_notification_token'))) {
                                         mailParams.notification_email = currentUser.get('notification_email');
@@ -147,7 +144,6 @@ var Keys = function (PostGre) {
                                         first_phone_number: currentUser.get('first_phone_number'),
                                         second_phone_number: currentUser.get('second_phone_number'),
                                         uploadDate: uploadDate,
-                                        address: address,
                                         locationLink: locationLink
                                     };
 
