@@ -26,7 +26,7 @@ module.exports = function (app, PostGre) {
 
     app.post( '/signOut', users.signOut);
 
-    app.put( '/updateUser', users.updateUser);
+    app.put( '/updateUser', session.authenticatedUser, users.updateUser);
 
     app.get( '/confirmEmail/:confirmToken', users.confirmEmail);
 
