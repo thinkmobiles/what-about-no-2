@@ -11,56 +11,60 @@ module.exports = function (app, PostGre) {
     var session = new SessionHandler(PostGre);
     var users = new UserHandler(PostGre);
 
-
     app.get('/', function (req, res, next) {
         res.sendfile('index.html');
     });
 
     app.use('/videos', videosRouter);
 
-    app.get( '/isAuth', session.authenticatedUser);
+    app.get('/isAuth', session.authenticatedUser);
 
-    app.post( '/signUp', users.signUp);
+    app.post('/signUp', users.signUp);
 
-    app.post( '/signIn',  users.signIn);
+    app.post('/signIn', users.signIn);
 
-    app.post( '/signOut', users.signOut);
+    app.post('/signOut', users.signOut);
 
-    app.put( '/updateUser', session.authenticatedUser, users.updateUser);
+    app.put('/updateUser', session.authenticatedUser, users.updateUser);
 
-    app.get( '/confirmEmail/:confirmToken', users.confirmEmail);
+    app.get('/confirmEmail/:confirmToken', users.confirmEmail);
 
-    app.post( '/forgotPassword', users.forgotPassword);
+    app.post('/forgotPassword', users.forgotPassword);
 
-    app.get( '/changePassword/:forgotToken', function ( req, res, next ) {
+    app.get('/changePassword/:forgotToken', function (req, res, next) {
         res.render('changePassword.html');
     });
 
-    app.post( '/changePassword/:forgotToken', users.changePassword);
+    app.post('/changePassword/:forgotToken', users.changePassword);
 
-    app.get( '/error', function ( req, res, next ) {
+    app.get('/error', function (req, res, next) {
         res.render('error.html');
     });
 
-    app.get( '/successConfirm', function ( req, res, next ) {
+    app.get('/successConfirm', function (req, res, next) {
         res.render('successConfirm.html');
     });
 
-    function errorHandler( err, req, res, next ) {
-        console.error( err.message );
-        console.error( err.stack );
+    function errorHandler(err, req, res, next) {
+        var status = err.status || 500;
 
-        if( process.env.NODE_ENV === 'production' ) {
-            res.status( 500).send({error: err.message});
+        if (err.redirect) {
+            return res.redirect(process.env.HOST + '/error');
+        }
+
+        if (process.env.NODE_ENV === 'production') {
+            res.status(status).send({error: err.message});
         } else {
-            res.status( 500 ).send( {error: err.message + '\n' + err.stack });
-            logWriter.log( '', err.message + '\n' + err.stack );
+
+            console.error(err.message);
+            console.error(err.stack);
+
+            res.status(status).send({error: err.message, stack: err.stack});
+            logWriter.log('', err.message + '\n' + err.stack);
         }
-        if(err.redirect){
-            res.redirect(process.env.HOST + '/error');
-        }
+
         next();
     }
 
-    app.use( errorHandler );
+    app.use(errorHandler);
 };
