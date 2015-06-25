@@ -139,10 +139,10 @@ module.exports = function ( ) {
             errOptions.name = 'SignInError';
         }
         if ( !errOptions.message ) {
-            errOptions.message = 'Invalid email or password';
+            errOptions.message = 'Incorrect email or password';
         }
         if ( !errOptions.status ) {
-            errOptions.status = 401;
+            errOptions.status = DEFAULT_ERROR_STATUS;
         }
 
         return new CustomError( errOptions );

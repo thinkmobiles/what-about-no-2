@@ -216,7 +216,7 @@ var User = function (PostGre) {
                             return res.status(200).send({success: CONSTANTS.LOG_IN});
 
                         } else {
-                            next(badRequests.invalidEmail());
+                            next(badRequests.signInError());
                         }
                     })
                     .otherwise(next);
@@ -576,7 +576,6 @@ var User = function (PostGre) {
                 .otherwise(next);
         };
 
-    }
-    ;
+    };
 
 module.exports = User;
