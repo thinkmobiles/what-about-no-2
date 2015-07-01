@@ -36,7 +36,6 @@ var User = function (PostGre) {
             var notificationEmail;
             var firstPhoneNumber;
             var secondPhoneNumber;
-            var err;
 
             if (params && params.email && params.pass && params.first_phone_number) {
                 if (!EMAIL_REGEXP.test(params.email)) {
@@ -46,14 +45,10 @@ var User = function (PostGre) {
                     return next(badRequests.invalidEmail());
                 }
                 if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.first_phone_number)) {
-                    err = new Error(CONSTANTS.INVALID_PHONE_NUMBER);
-                    err.status = 400;
-                    return next(err);
+                    return next(badRequests.invalidValue({ message: CONSTANTS.INVALID_PHONE_NUMBER }));
                 }
                 if (params.second_phone_number && (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.second_phone_number))) {
-                    err = new Error(CONSTANTS.INVALID_PHONE_NUMBER);
-                    err.status = 400;
-                    return next(err);
+                    return next(badRequests.invalidValue({ message: CONSTANTS.INVALID_PHONE_NUMBER }));
                 }
 
                 email = params.email;
@@ -62,58 +57,16 @@ var User = function (PostGre) {
                 secondPhoneNumber = params.second_phone_number;
 
                 UserModel
-                    .forge()
-                    .query(function (qb) {
-                        var sql = "( ";
-
-                        sql += " (email='" + email + "') OR (first_phone_number='" + firstPhoneNumber + "') ";
-                        sql += " OR (notification_email='" + email + "') OR (second_phone_number='" + firstPhoneNumber + "')";
-
-                        if (notificationEmail) {
-                            sql += " OR (notification_email='" + notificationEmail + "') OR (email='" + notificationEmail + "')";
-                        }
-
-                        if (secondPhoneNumber) {
-                            sql += " OR (second_phone_number='" + secondPhoneNumber + "') OR (first_phone_number='" + secondPhoneNumber + "')";
-                        }
-
-                        sql += ") AND project='" + CONSTANTS.PROJECT_NAME + "' ";
-
-                        return qb.whereRaw(sql);
-                    })
-                    /*.fetchMe({
-                     email: params.email,
-                     project: CONSTANTS.PROJECT_NAME
-                     })*/
-                    .fetch()
+                    .fetchMe({
+                        first_phone_number: firstPhoneNumber,
+                        project: CONSTANTS.PROJECT_NAME
+                     })
                     .then(function (existsUser) {
                         var userJSON;
                         var createOptions;
 
-                        if (existsUser && existsUser.id) { //check unique email, notification_email, first_phone_number, second_phone_number;
-
-                            userJSON = existsUser.toJSON();
-
-                            err = new Error();
-                            err.status = 400;
-
-                            if ((email === userJSON.email)
-                                || (email === userJSON.notification_email)
-                                || (notificationEmail === userJSON.email)
-                                || (notificationEmail === userJSON.notification_email)
-                            ) {
-                                err.message = CONSTANTS.NOT_UNIQUE_EMAIL;
-                            }
-
-                            if ((firstPhoneNumber === userJSON.first_phone_number)
-                                || (firstPhoneNumber === userJSON.second_phone_number)
-                                || (secondPhoneNumber === userJSON.first_phone_number)
-                                || (secondPhoneNumber === userJSON.second_phone_number)
-                            ) {
-                                err.message = CONSTANTS.NOT_UNIQUE_PHONE_NUMBER;
-                            }
-
-                            return next(err);
+                        if (existsUser && existsUser.id) { //check unique first_phone_number
+                            return next(badRequests.invalidValue({message: CONSTANTS.NOT_UNIQUE_PHONE_NUMBER}));
                         }
 
                         createOptions = {
@@ -187,21 +140,19 @@ var User = function (PostGre) {
             var encryptedPass;
             var err;
 
-            if (params && params.email && params.pass) {
+            if (params && params.first_phone_number && params.pass) {
 
                 encryptedPass = getEncryptedPass(params.pass);
                 UserModel
                     .fetchMe({
-                        email: params.email,
+                        first_phone_number: params.first_phone_number,
                         password: encryptedPass,
                         project: CONSTANTS.PROJECT_NAME
                     })
                     .then(function (user) {
                         if (user && user.id) {
                             if (user.get("confirmation_token")) {
-                                err = new Error(CONSTANTS.VERIFY_EMAIL);
-                                err.status = 400;
-                                return next(err);
+                                return next(badRequests.unconfirmedEmail({message: CONSTANTS.VERIFY_EMAIL}));
                             }
 
                             req.session.userId = user.id;
@@ -380,30 +331,31 @@ var User = function (PostGre) {
         this.updateUser = function (req, res, next) {
             var userId = req.session.userId;
             var options = req.body;
+            var email = options.email;
             var notificationEmail = options.notification_email;
-            var firstPhoneNumber = options.first_phone_number;
             var secondPhoneNumber = options.second_phone_number;
 
             async.waterfall([
 
                     //validate params:
                     function (cb) {
-
-                        if ((notificationEmail === undefined) && (firstPhoneNumber === undefined) && (secondPhoneNumber === undefined)) {
+                
+                        //check is exists params for update:
+                        if ((email === undefined) && (notificationEmail === undefined) && (secondPhoneNumber === undefined)) {
                             return cb(badRequests.noUpdateParams());
                         }
 
+                        //email:
+                        if (email) {
+                            if (!EMAIL_REGEXP.test(email)) {
+                                return cb(badRequests.invalidEmail());
+                            }
+                        }
+                
                         //notification_email:
                         if (notificationEmail) {
                             if (!EMAIL_REGEXP.test(notificationEmail)) {
                                 return cb(badRequests.invalidEmail());
-                            }
-                        }
-
-                        //first_phone_number:
-                        if (firstPhoneNumber) {
-                            if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(firstPhoneNumber)) {
-                                return cb(badRequests.invalidValue({message: CONSTANTS.INVALID_PHONE_NUMBER}));
                             }
                         }
 
@@ -438,77 +390,16 @@ var User = function (PostGre) {
                             });
                     },
 
-                    //check is exists user with same params:
-                    function (currentUser, cb) {
-
-                        UserModel
-                            .forge()
-                            .query(function (qb) {
-
-                                qb.orWhere(function () {
-
-                                    if (notificationEmail !== undefined) {
-                                        this.orWhere('notification_email', '=', notificationEmail);
-                                        this.orWhere('email', '=', notificationEmail);
-                                    }
-
-                                    if (firstPhoneNumber !== undefined) {
-                                        this.orWhere('first_phone_number', '=', firstPhoneNumber);
-                                        this.orWhere('second_phone_number', '=', firstPhoneNumber);
-                                    }
-
-                                    if (secondPhoneNumber !== undefined) {
-                                        this.orWhere('second_phone_number', '=', secondPhoneNumber);
-                                        this.orWhere('first_phone_number', '=', secondPhoneNumber);
-                                    }
-
-                                })
-                                    .andWhere('project', '=', CONSTANTS.PROJECT_NAME)
-                                    .andWhere('id', '<>', userId); //currentUser
-
-                                return qb;
-                            })
-                            .fetch()
-                            .then(function (existsUser) {
-                                var errMessage;
-                                var userJSON;
-
-                                if (existsUser && existsUser.id) { //check unique: notification_email, first_phone_number, second_phone_number;
-                                    userJSON = existsUser.toJSON();
-
-                                    if ((notificationEmail === userJSON.email) || (notificationEmail === userJSON.notification_email)) {
-                                        errMessage = CONSTANTS.NOT_UNIQUE_EMAIL;
-                                    }
-
-                                    if ((firstPhoneNumber === userJSON.first_phone_number)
-                                        || (firstPhoneNumber === userJSON.second_phone_number)
-                                        || (secondPhoneNumber === userJSON.first_phone_number)
-                                        || (secondPhoneNumber === userJSON.second_phone_number)
-                                    ) {
-                                        errMessage = CONSTANTS.NOT_UNIQUE_PHONE_NUMBER;
-                                    }
-
-                                    return cb(badRequests.invalidValue({message: errMessage}));
-
-                                }
-
-                                cb(null, currentUser);
-                            })
-                            .otherwise(function (err) {
-                                cb(err);
-                            });
-                    },
-
                     //update the user:
                     function (currentUser, cb) {
                         var saveOptions = {};
+                
+                        if (email !== undefined) {
+                            saveOptions.email = email;
+                        }
 
                         if (notificationEmail !== undefined) {
                             saveOptions.notification_email = notificationEmail;
-                        }
-
-                        if (firstPhoneNumber !== undefined) {
-                            saveOptions.first_phone_number = firstPhoneNumber;
                         }
 
                         if (secondPhoneNumber !== undefined) {
@@ -531,8 +422,7 @@ var User = function (PostGre) {
                     }
                     res.status(200).send({success: RESPONSES.SUCCESS_UPDATED});
                 }
-            )
-            ;
+            );
         };
 
         this.getUsers = function (req, res, next) {
