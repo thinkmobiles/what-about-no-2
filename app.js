@@ -18,8 +18,8 @@ var PostGre;
 var Models;
 
 //todo change
-//process.env.NODE_ENV = 'production';
 process.env.NODE_ENV = 'development';
+//process.env.NODE_ENV = 'production';
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.set('views', __dirname + '/public/static');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-if (app.get('env') === 'development') {
+if (process.env.NODE_ENV === 'development') {
     console.log('-----Server start success in Development version--------');
     require('./config/development');
 } else {
