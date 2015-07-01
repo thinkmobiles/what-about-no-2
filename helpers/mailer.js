@@ -4,6 +4,7 @@ module.exports = function () {
     var fs = require("fs");
     var FROM = "The No App <thenoapp@gmail.com>";
     var moment = require('./moment');
+    var phoneNumberFormater = require('./phoneNumberFormater.js');
 
     this.onSendConfirm = function (options, callback) {
         var templateOptions = {
@@ -24,10 +25,12 @@ module.exports = function () {
     this.onUploadVideo = function (options, callback) {
         var uploadDate = options.uploadDate;
         var uploadMoment = new moment(uploadDate);
+        var phone = phoneNumberFormater.format(options.phone);
+
         var templateOptions = {
             host: process.env.HOST,
             locationLink: options.locationLink,
-            phone: options.phone,
+            phone: phone,
             date: uploadMoment.format('LLLL')
         };
         var mailOptions = {

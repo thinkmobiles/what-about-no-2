@@ -4,6 +4,7 @@ module.exports = function () {
     var CONSTANTS = require('../constants/constants');
 
     var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
+    var phoneNumberFormater = require('../helpers/phoneNumberFormater.js');
 
     this.sendSignUpSMS = function (options) {
         var messageOptions = {
@@ -11,14 +12,14 @@ module.exports = function () {
             from: CONSTANTS.TWILIO_CLIENT_NUMBER,
             body: CONSTANTS.SIGN_UP_TEXT
         };
-        sendSMS(messageOptions)
+        sendSMS(messageOptions);
     };
 
     this.onUploadVideoSMS = function (options) {
-        var message = "The-No-App on phone # " + options.first_phone_number
-            + " has recorded an encounter at " + options.uploadDate + " at location "
-            + options.locationLink
-            + ".";
+        var phone = phoneNumberFormater.format(options.first_phone_number);
+        var message = "The-No-App on phone # " + phone 
+            + " has recorded an encounter at " + options.uploadDate + " at location " 
+            + options.locationLink + ".";
         var messageOptions = {
             to: options.first_phone_number,
             from: CONSTANTS.TWILIO_CLIENT_NUMBER,
@@ -27,7 +28,7 @@ module.exports = function () {
         if (options.second_phone_number && options.second_phone_number !== options.first_phone_number) {
             messageOptions.to = options.first_phone_number + ', ' + options.second_phone_number
         }
-        sendSMS(messageOptions)
+        sendSMS(messageOptions);
     };
 
 
