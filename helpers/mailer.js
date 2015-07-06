@@ -47,18 +47,20 @@ module.exports = function () {
     };
 
     this.onForgotPassword = function (options, callback) {
+        var email = options.email;
+        var phone = options.first_phone_number;
         var templateOptions = {
-            changePasswordLink: process.env.HOST + "/changePassword/" + options.forgot_token
+            host: process.env.HOST,
+            changePasswordLink: process.env.HOST + "/changePassword/" + options.forgot_token,
+            phone: phone
         };
         var mailOptions = {
             from: FROM,
-            to: options.email,
+            to: email,
             subject: "Forgot Password",
             html: _.template(fs.readFileSync('public/templates/mailer/forgotPassword.html', "utf8"), templateOptions)
         };
-        if (options.notification_email && (options.notification_email && !options.confirmation_notification_token) && options.notification_email !== options.email) {
-            mailOptions.to = options.email + ', ' + options.notification_email;
-        }
+
         deliver(mailOptions, callback);
     };
 

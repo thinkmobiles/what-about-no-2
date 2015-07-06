@@ -19,6 +19,7 @@ module.exports = {
     VERIFY_EMAIL: "Please verify Your email!",
     CONFIRM_ERROR: "Invalid confirmToken",
     EMAIL_ERROR: "User was not found by email",
+    FIRST_PHONE_NUMBER_ERROR: "User was not found by phone number",
     PASS_ERROR: 'Password and Confirmation Password are not equal',
     KEY_ERROR: "Key already in use",
     INVALID_PHONE_NUMBER: "Invalid phone number",

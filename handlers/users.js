@@ -234,44 +234,45 @@ var User = function (PostGre) {
         };
 
         this.forgotPassword = function (req, res, next) {
-            var params = req.body;
-            var err;
+        var params = req.body;
+        var firstPhoneNumber = params.first_phone_number;
+        var email = params.email;
 
-            if (!params || !params.email) {
-                return next(badRequests.notEnParams());
+            if (!params || !firstPhoneNumber) {
+                return next(badRequests.notEnParams({reqParams: 'first_phone_number'}));
             }
-
-            if (!EMAIL_REGEXP.test(params.email)) {
-                return next(badRequests.invalidEmail());
-            }
-
+        
+            //find the user by phone number:
             UserModel
                 .fetchMe({
-                    email: params.email,
+                    first_phone_number: firstPhoneNumber,
                     project: CONSTANTS.PROJECT_NAME
                 })
                 .then(function (userModel) {
-                    if (userModel && userModel.id) {
-
+                    var toEmail;
+            
+                    if (userModel && userModel.id) { //is exists user:
+                
                         userModel
                             .set({
                                 'forgot_token': tokenGenerator.generate()
                             })
                             .save()
                             .then(function (user) {
-                                mailer.onForgotPassword(user.toJSON(), function (err) {
+                                var userJSON = user.toJSON();
+                                var responseMessage = 'Please check email ' + userJSON.email + ' and proceed by provided link for changing password';
+                                    
+                                mailer.onForgotPassword(userJSON, function (err) {
                                     if (err) {
                                         logWriter.log(".forgotPassword() -> onForgotPassword()", err);
                                     }
                                 });
-                                res.status(200).send({success: CONSTANTS.FORGOT_PASS_TEXT});
+                                res.status(200).send({success: responseMessage});
                             })
                             .otherwise(next);
 
                     } else {
-                        err = new Error(CONSTANTS.EMAIL_ERROR);
-                        err.ststus = 400;
-                        next(err);
+                        next(badRequests.notFound({message: CONSTANTS.FIRST_PHONE_NUMBER_ERROR}));
                     }
                 })
                 .otherwise(next);

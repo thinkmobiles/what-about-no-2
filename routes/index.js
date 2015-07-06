@@ -44,6 +44,10 @@ module.exports = function (app, PostGre) {
     app.get('/successConfirm', function (req, res, next) {
         res.render('successConfirm.html');
     });
+    
+    app.get('/afterSuccessChange', function (req, res, next) {
+        res.render('afterSuccessChange.html');
+    });
 
     function errorHandler(err, req, res, next) {
         var status = err.status || 500;
