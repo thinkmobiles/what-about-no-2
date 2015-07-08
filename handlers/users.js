@@ -34,17 +34,21 @@ var User = function (PostGre) {
             var params = req.body;
             var email;
             var notificationEmail;
+            var registerPhoneNumber;
             var firstPhoneNumber;
             var secondPhoneNumber;
 
-            if (params && params.email && params.pass && params.first_phone_number) {
+            if (params && params.email && params.pass && params.register_phone_number) {
                 if (!EMAIL_REGEXP.test(params.email)) {
                     return next(badRequests.invalidEmail());
                 }
                 if (params.notification_email && (!EMAIL_REGEXP.test(params.notification_email))) {
                     return next(badRequests.invalidEmail());
                 }
-                if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.first_phone_number)) {
+                if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.register_phone_number)) {
+                    return next(badRequests.invalidValue({ message: CONSTANTS.INVALID_PHONE_NUMBER }));
+                }
+                if (params.first_phone_number && !CONSTANTS.PHONE_NUMBER_REGEXP.test(params.first_phone_number)) {
                     return next(badRequests.invalidValue({ message: CONSTANTS.INVALID_PHONE_NUMBER }));
                 }
                 if (params.second_phone_number && (!CONSTANTS.PHONE_NUMBER_REGEXP.test(params.second_phone_number))) {
@@ -53,25 +57,26 @@ var User = function (PostGre) {
 
                 email = params.email;
                 notificationEmail = params.notification_email;
+                registerPhoneNumber = params.register_phone_number;
                 firstPhoneNumber = params.first_phone_number;
                 secondPhoneNumber = params.second_phone_number;
 
                 UserModel
                     .fetchMe({
-                        first_phone_number: firstPhoneNumber,
+                        register_phone_number: registerPhoneNumber,
                         project: CONSTANTS.PROJECT_NAME
                      })
                     .then(function (existsUser) {
                         var userJSON;
                         var createOptions;
 
-                        if (existsUser && existsUser.id) { //check unique first_phone_number
+                        if (existsUser && existsUser.id) { //check unique register_phone_number
                             return next(badRequests.invalidValue({message: CONSTANTS.NOT_UNIQUE_PHONE_NUMBER}));
                         }
 
                         createOptions = {
                             email: email,
-                            first_phone_number: firstPhoneNumber,
+                            register_phone_number: registerPhoneNumber,
                             password: getEncryptedPass(params.pass),
                             confirmation_token: tokenGenerator.generate(),
                             project: CONSTANTS.PROJECT_NAME
@@ -82,6 +87,10 @@ var User = function (PostGre) {
                             createOptions.confirmation_notification_token = tokenGenerator.generate();
                         }
 
+                        if (firstPhoneNumber) {
+                            createOptions.first_phone_number = firstPhoneNumber;
+                        }
+
                         if (secondPhoneNumber) {
                             createOptions.second_phone_number = secondPhoneNumber;
                         }
@@ -90,7 +99,7 @@ var User = function (PostGre) {
                             .insert(createOptions)
                             .then(function (userModel) {
                                 var smsOptions = {
-                                    phone: userModel.get('first_phone_number')
+                                    phone: registerPhoneNumber, //TODO: userModel
                                 };
                                 var emailConfirmOptions = {
                                     email: userModel.get('email'),
@@ -137,18 +146,29 @@ var User = function (PostGre) {
 
         this.signIn = function (req, res, next) {
             var params = req.body;
-            var encryptedPass;
-            var err;
+            var fetchParams;
 
-            if (params && params.first_phone_number && params.pass) {
+            if (params && (params.register_phone_number && params.pass) || (params.email && params.pass)) {
 
-                encryptedPass = getEncryptedPass(params.pass);
+                fetchParams = {
+                    password: getEncryptedPass(params.pass),
+                    project: CONSTANTS.PROJECT_NAME
+                };
+            
+                if (params.register_phone_number) {
+                    // for users:
+                    fetchParams.register_phone_number = params.register_phone_number;
+                    fetchParams.role = 0;
+                } else if (params.email) {
+                    // for admin:
+                    fetchParams.email = params.email;
+                    fetchParams.role = 1;
+                } else {
+                    return next(badRequests.notEnParams());
+                }
+
                 UserModel
-                    .fetchMe({
-                        first_phone_number: params.first_phone_number,
-                        password: encryptedPass,
-                        project: CONSTANTS.PROJECT_NAME
-                    })
+                    .fetchMe(fetchParams)
                     .then(function (user) {
                         if (user && user.id) {
                             if (user.get("confirmation_token")) {
