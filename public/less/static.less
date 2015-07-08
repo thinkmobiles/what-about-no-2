@@ -3,6 +3,7 @@ html, body {
   font-family: 'Roboto', sans-serif !important;
   background-color: #dbeaf3;
 }
+
 .changePassword {
   font-family: 'Roboto-Light', sans-serif !important;
   height: 100%;
@@ -38,10 +39,18 @@ html, body {
       margin-bottom: 15px;
       outline: none;
       width: 100%;
-      &::-webkit-input-placeholder {color:#fff;}
-      &::-moz-placeholder          {color:#fff;}
-      &:-moz-placeholder           {color:#fff;}
-      &:-ms-input-placeholder      {color:#fff;}
+      &::-webkit-input-placeholder {
+        color: #fff;
+      }
+      &::-moz-placeholder {
+        color: #fff;
+      }
+      &:-moz-placeholder {
+        color: #fff;
+      }
+      &:-ms-input-placeholder {
+        color: #fff;
+      }
     }
 
     button {
@@ -59,9 +68,27 @@ html, body {
       width: 100%;
     }
     p {
-        font-family: 'Roboto', sans-serif !important;
-        padding: 5px;
-        font-size: 22px;
+      font-family: 'Roboto', sans-serif !important;
+      padding: 5px;
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .changePassword .formChange {
+    width: 75%;
+
+    h2 {
+      font-size: 48px;
+    }
+
+    input {
+      font-size: 36px;
+    }
+
+    button {
+      font-size: 28px;
     }
   }
 }
