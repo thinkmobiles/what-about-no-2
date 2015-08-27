@@ -18,8 +18,8 @@ var PostGre;
 var Models;
 
 //todo change
-process.env.NODE_ENV = 'development';
-//process.env.NODE_ENV = 'production';
+//process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

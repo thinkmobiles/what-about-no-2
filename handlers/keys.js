@@ -75,7 +75,6 @@ var Keys = function (PostGre) {
             next(BadRequests.notEnParams());
         }
 
-        //check params.videos is array, with 2 items;
         UserModel
             .fetchMe({
                 id: userId,
@@ -131,7 +130,7 @@ var Keys = function (PostGre) {
                                     uploadDate = videoModel.get('datetime');
                                     mailParams = {
                                         email: currentUser.get('email'),
-                                        phone: currentUser.get('first_phone_number'),
+                                        phone: currentUser.get('register_phone_number'),
                                         uploadDate: uploadDate,
                                         locationLink: locationLink
                                     };
@@ -141,6 +140,7 @@ var Keys = function (PostGre) {
                                     }
 
                                     smsParams = {
+                                        register_phone_number: currentUser.get('register_phone_number'),
                                         first_phone_number: currentUser.get('first_phone_number'),
                                         second_phone_number: currentUser.get('second_phone_number'),
                                         uploadDate: uploadDate,

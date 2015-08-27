@@ -48,7 +48,7 @@ module.exports = function () {
 
     this.onForgotPassword = function (options, callback) {
         var email = options.email;
-        var phone = options.first_phone_number;
+        var phone = options.register_phone_number;
         var templateOptions = {
             host: process.env.HOST,
             changePasswordLink: process.env.HOST + "/changePassword/" + options.forgot_token,

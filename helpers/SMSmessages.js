@@ -2,7 +2,7 @@ module.exports = function () {
     var ACCOUNT_SID = process.env.smsAccountSid;
     var AUTH_TOKEN = process.env.smsAuthToken;
     var CONSTANTS = require('../constants/constants');
-
+    
     var client = require('twilio')(ACCOUNT_SID, AUTH_TOKEN);
     var phoneNumberFormater = require('../helpers/phoneNumberFormater.js');
 
@@ -16,22 +16,39 @@ module.exports = function () {
     };
 
     this.onUploadVideoSMS = function (options) {
-        var phone = phoneNumberFormater.format(options.first_phone_number);
+        var registerPhoneNumber = options.register_phone_number;
+        var firstPhoneNumber = options.first_phone_number;
+        var secondPhoneNumber = options.second_phone_number;
+
+        var phone = phoneNumberFormater.format(registerPhoneNumber);
         var message = "The-No-App on phone # " + phone 
             + " has recorded an encounter at " + options.uploadDate + " at location " 
             + options.locationLink + ".";
-        var messageOptions = {
-            to: options.first_phone_number,
-            from: CONSTANTS.TWILIO_CLIENT_NUMBER,
-            body: message
-        };
-        if (options.second_phone_number && options.second_phone_number !== options.first_phone_number) {
-            messageOptions.to = options.first_phone_number + ', ' + options.second_phone_number
+        var numbers = [registerPhoneNumber];
+        var messageOptions;
+        
+        if (firstPhoneNumber && (numbers.indexOf(firstPhoneNumber) === -1)) {
+            numbers.push(firstPhoneNumber);
         }
-        sendSMS(messageOptions);
+
+        if (secondPhoneNumber && (numbers.indexOf(secondPhoneNumber) === -1)) {
+            numbers.push(secondPhoneNumber);
+        }
+        
+        numbers.forEach(function (number) { 
+            messageOptions = {
+                to: number,
+                from: CONSTANTS.TWILIO_CLIENT_NUMBER,
+                body: message
+            };
+
+            sendSMS(messageOptions, function (err, result) {
+                if (err) { 
+                    console.log('Error:', err);
+                }
+            });
+        });
     };
-
-
 
     function sendSMS (options, callback) {
         client.sendMessage(options, callback)

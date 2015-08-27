@@ -255,17 +255,17 @@ var User = function (PostGre) {
 
         this.forgotPassword = function (req, res, next) {
         var params = req.body;
-        var firstPhoneNumber = params.first_phone_number;
+        var registerPhoneNumber = params.register_phone_number;
         var email = params.email;
 
-            if (!params || !firstPhoneNumber) {
-                return next(badRequests.notEnParams({reqParams: 'first_phone_number'}));
+            if (!params || !registerPhoneNumber) {
+                return next(badRequests.notEnParams({reqParams: 'register_phone_number'}));
             }
         
             //find the user by phone number:
             UserModel
                 .fetchMe({
-                    first_phone_number: firstPhoneNumber,
+                    register_phone_number: registerPhoneNumber,
                     project: CONSTANTS.PROJECT_NAME
                 })
                 .then(function (userModel) {
@@ -289,13 +289,13 @@ var User = function (PostGre) {
                                 });
                                 res.status(200).send({success: responseMessage});
                             })
-                            .otherwise(next);
+                            .catch(next);
 
                     } else {
                         next(badRequests.notFound({message: CONSTANTS.FIRST_PHONE_NUMBER_ERROR}));
                     }
                 })
-                .otherwise(next);
+                .catch(next);
 
         };
 
@@ -354,6 +354,7 @@ var User = function (PostGre) {
             var options = req.body;
             var email = options.email;
             var notificationEmail = options.notification_email;
+            var firstPhoneNumber = options.first_phone_number;
             var secondPhoneNumber = options.second_phone_number;
 
             async.waterfall([
@@ -362,7 +363,7 @@ var User = function (PostGre) {
                     function (cb) {
                 
                         //check is exists params for update:
-                        if ((email === undefined) && (notificationEmail === undefined) && (secondPhoneNumber === undefined)) {
+                        if ((email === undefined) && (notificationEmail === undefined) && (firstPhoneNumber === undefined) && (secondPhoneNumber === undefined)) {
                             return cb(badRequests.noUpdateParams());
                         }
 
@@ -377,6 +378,13 @@ var User = function (PostGre) {
                         if (notificationEmail) {
                             if (!EMAIL_REGEXP.test(notificationEmail)) {
                                 return cb(badRequests.invalidEmail());
+                            }
+                        }
+
+                        //first_phone_number:
+                        if (firstPhoneNumber) {
+                            if (!CONSTANTS.PHONE_NUMBER_REGEXP.test(firstPhoneNumber)) {
+                                return cb(badRequests.invalidValue({message: CONSTANTS.INVALID_PHONE_NUMBER}));
                             }
                         }
 
@@ -422,6 +430,10 @@ var User = function (PostGre) {
                         if (notificationEmail !== undefined) {
                             saveOptions.notification_email = notificationEmail;
                         }
+
+                        if (firstPhoneNumber !== undefined) {
+                            saveOptions.first_phone_number = firstPhoneNumber;
+                }
 
                         if (secondPhoneNumber !== undefined) {
                             saveOptions.second_phone_number = secondPhoneNumber;
